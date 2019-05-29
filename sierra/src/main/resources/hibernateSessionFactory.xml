@@ -7,8 +7,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
 
-	<!-- Se define el bean que se encargará de crear las sesiones para conexión 
-		con BD -->
+	<!-- Se define el bean que se encargará de crear las sesiones para conexión con BD -->
 	<bean id="entityManagerFactory"
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<!-- <property name="persistenceProviderClass"> <bean class="org.hibernate.ejb.HibernatePersistence" 
@@ -26,7 +25,7 @@ http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
 		<property name="jpaProperties">
 			<props>
 				<!-- Define el dialecto de SQL a ocupar -->
-				<prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQL94Dialect
+				<prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect
 				</prop>
 				<!-- <prop key="geometry">org.hibernatespatial.GeometryUserType; </prop> -->
 				<!-- Imprime en consola la sentencia creada por hibernate -->
@@ -48,8 +47,8 @@ http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
 			de JPA -->
 		<property name="packagesToScan">
 			<list>
-				<value>mx.ipn.escom.wad.sierra</value>
-				<value>mx.ipn.escom.wad.sierra.*</value>
+				<value>mx.ipn.escom.wad.entities</value>
+				<value>mx.ipn.escom.wad.entities.*</value>
 			</list>
 		</property>
 	</bean>

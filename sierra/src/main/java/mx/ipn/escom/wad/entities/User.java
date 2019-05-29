@@ -19,9 +19,9 @@ import com.opensymphony.xwork2.validator.annotations.EmailValidator;
 import com.opensymphony.xwork2.validator.annotations.ValidatorType;
 
 @Entity
-@Table(name = "users")
+@Table(name = "usuario")
 @Inheritance(strategy = InheritanceType.JOINED)
-@PrimaryKeyJoinColumn(name = "id_user", referencedColumnName = "id_person")
+@PrimaryKeyJoinColumn(name = "id_usuario", referencedColumnName = "id_person")
 public class User extends Person implements Serializable {
 	/**
 	 * 
@@ -29,12 +29,12 @@ public class User extends Person implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Column(name = "tx_login")
 	private String login;
-	@Column(name = "tx_password")
-	private String password;
+	@Column(name = "tx_pass")
+	private String pass;
 
 	@OneToOne
 	@JoinColumn(name = "id_user", referencedColumnName = "id_access", insertable = false, updatable = false)
-	private Access access;
+	private Acceso access;
 
 	@OneToMany
 	@JoinColumn(name = "id_user", referencedColumnName = "id_user", insertable = false, updatable = false)
@@ -62,11 +62,11 @@ public class User extends Person implements Serializable {
 		this.password = password;
 	}
 
-	public Access getAccess() {
+	public Acceso getAccess() {
 		return access;
 	}
 
-	public void setAccess(Access access) {
+	public void setAccess(Acceso access) {
 		this.access = access;
 	}
 

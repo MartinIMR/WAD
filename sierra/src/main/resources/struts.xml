@@ -7,11 +7,11 @@
         "http://struts.apache.org/dtds/struts-2.5.dtd">
 <struts>
 	<!-- Excluir una url en Struts2 -->
-	<!-- <constant name="struts.action.excludePattern" value="/OL4JSFProxy/wms*" 
-		/> -->
+	<!-- 
+	<constant name="struts.action.excludePattern" value="/OL4JSFProxy/wms*"/> 	
 	<constant name="struts.action.excludePattern"
 		value="/services/.*,/wsServer*,/admision/procesar-pago" />
-
+	-->
 	<constant name="struts.i18n.encoding" value="UTF-8" />
 	<constant name="struts.locale" value="es_MX" />
 	<!-- Delega el trabajo de creación de objetos a Spring -->
@@ -25,19 +25,16 @@
 
 	<!-- struts2 busca paquetes que terminen, en su nombre, con las siguientes 
 		cadenas en busca de acciones -->
-	<constant name="struts.convention.package.locators"
-		value="action" />
-
+	<constant name="struts.convention.package.locators" value="action" />
 	<!-- Indica el sufijo del nombre de los archivos para las acciones no mapeadas 
 		explicitamente -->
 	<constant name="struts.convention.action.suffix" value="Act" />
-
 	<!-- Mapea todas las acciones encontradas aun y cuando no exista la anotacion 
 		correspondiente -->
 	<constant name="struts.convention.action.mapAllMatches"
 		value="true" />
 
-	<!-- sirve para que los botones hagan diferentes accciones -->
+	<!-- Sirve para que los botones hagan diferentes accciones -->
 	<constant name="struts.mapper.action.prefix.enabled"
 		value="true" />
 
@@ -88,14 +85,11 @@
 				<!-- Permite el mapeo de una excepción hacia un result code, es recomendado 
 					que sea el primer interceptor -->
 				<interceptor-ref name="exception" />
-
 				<interceptor-ref name="alias" />
-
 				<!-- Establece todas las propiedades de un action basada en las interfaces 
 					que esta implementa. Está diseñado para establecer todas las propiedades 
 					que podría llegar a requerir de servleContext, servletRequest -->
 				<interceptor-ref name="servletConfig" />
-
 				<!-- Configura el idioma especificado en una sesión como el de la petición. 
 					Además, también buscará el parámetro request_locale para el cambio de idioma -->
 				<interceptor-ref name="i18n" />
@@ -131,7 +125,7 @@
 				</interceptor-ref>
 
 				<!-- Agrega algunos parámetros que proporcionan información acerca del 
-					archivo subido, además permite definir las restricciones par alos archivos 
+					archivo subido, además permite definir las restricciones para los archivos 
 					a subir -->
 				<interceptor-ref name="fileUpload">
 					<!-- <param name="allowedTypes">application/pdf</param> -->
@@ -215,5 +209,6 @@
 			<exception-mapping
 				exception="java.net.ConnectException" result="error" />
 		</global-exception-mappings>-->
+		
 	</package>
 </struts> 
